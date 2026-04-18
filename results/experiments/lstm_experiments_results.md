@@ -5,7 +5,7 @@ All experiments use the Jena Climate dataset.
 
 ---
 
-## Experiment 1 — LSTM Units: 32 → 64
+## Experiment 1 - LSTM Units: 32 → 64
 
 **Change:** `keras.layers.LSTM(64)`
 
@@ -19,7 +19,7 @@ All experiments use the Jena Climate dataset.
 
 ---
 
-## Experiment 2 — Stacked LSTM (32 + 32)
+## Experiment 2 - Stacked LSTM (32 + 32)
 
 **Change:** Added second LSTM layer with `return_sequences=True`
 
@@ -33,7 +33,7 @@ All experiments use the Jena Climate dataset.
 
 ---
 
-## Experiment 3 — Extended Training: 10 → 20 Epochs
+## Experiment 3 - Extended Training: 10 → 20 Epochs
 
 **Change:** `epochs = 20` (architecture unchanged from baseline)
 
