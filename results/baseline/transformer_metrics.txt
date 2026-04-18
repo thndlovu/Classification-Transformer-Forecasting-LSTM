@@ -1,0 +1,37 @@
+Transformer Baseline Metrics
+=============================
+Date run: 2026-04-17
+Runtime: GPU (RTX 4090, vast.ai) + Colab T4 (multiple attempts)
+TF Version: 2.12.0 (vast.ai) / Keras 3.13.2 TF 2.19.0 (Colab)
+Epochs: 150 (early stopping, patience=10)
+Batch size: 64
+
+--- Final Results ---
+Test Accuracy: 0.5159 (51.6% — majority class prediction)
+Test Loss:     0.6930
+
+--- Training Notes ---
+Convergence behavior: Model failed to learn. Accuracy flatlined at ~51%
+                      (majority class) across all 150 epochs in every
+                      environment tested.
+
+--- Compatibility Issue ---
+The official Keras Transformer example was authored for Keras 2.
+The model fails to learn on both:
+  - Colab (Keras 3.13.2 / TF 2.19.0)
+  - vast.ai RTX 4090 (TF 2.12.0 / CUDA 11.8)
+
+Root cause: ff_dim=4 is too narrow to propagate useful gradients
+            through the attention layers on single-channel input
+            (shape 500x1). Model collapses to predicting majority class.
+
+Fixes attempted:
+  - TF version pinning (blocked by Colab)
+  - tf_keras migration
+  - Explicit learning rate (1e-3, 1e-4)
+  - Seed fixing
+  - Input projection layer (Conv1D expansion)
+  - Increased ff_dim to 128
+  All attempts produced identical 51% result.
+
+All 3 improvement experiments conducted on LSTM model instead.
