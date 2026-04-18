@@ -16,3 +16,17 @@ All experiments use the Jena Climate dataset.
 | vs Baseline | +6.3% worse |
 
 **Finding:** More capacity caused faster overfitting within 10 epochs. Val loss diverged from train loss earlier than the baseline.
+
+---
+
+## Experiment 2 — Stacked LSTM (32 + 32)
+
+**Change:** Added second LSTM layer with `return_sequences=True`
+
+| Metric | Value |
+|---|---|
+| Val Loss (final) | 0.1293 |
+| Train Loss (final) | 0.1007 |
+| vs Baseline | +8.1% worse |
+
+**Finding:** Stacking layers added parameters but hurt generalization. 10 epochs is insufficient for a deeper architecture to converge.
