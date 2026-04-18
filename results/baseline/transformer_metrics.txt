@@ -11,9 +11,7 @@ Test Accuracy: 0.5159 (51.6% — majority class prediction)
 Test Loss:     0.6930
 
 --- Training Notes ---
-Convergence behavior: Model failed to learn. Accuracy flatlined at ~51%
-                      (majority class) across all 150 epochs in every
-                      environment tested.
+Convergence behavior: Model failed to learn. Accuracy flatlined at ~51% (majority class) across all 150 epochs in every environment tested.
 
 --- Compatibility Issue ---
 The official Keras Transformer example was authored for Keras 2.
@@ -21,9 +19,7 @@ The model fails to learn on both:
   - Colab (Keras 3.13.2 / TF 2.19.0)
   - vast.ai RTX 4090 (TF 2.12.0 / CUDA 11.8)
 
-Root cause: ff_dim=4 is too narrow to propagate useful gradients
-            through the attention layers on single-channel input
-            (shape 500x1). Model collapses to predicting majority class.
+Root cause: ff_dim=4 is too narrow to propagate useful gradients through the attention layers on single-channel input (shape 500x1). Model collapses to predicting majority class.
 
 Fixes attempted:
   - TF version pinning (blocked by Colab)

@@ -25,8 +25,5 @@ Epoch 9:  0.1212
 Epoch 10: 0.1196
 
 --- Training Notes ---
-Convergence behavior: Val loss improved in 7/10 epochs. Model was
-                      still improving at epoch 10 — not fully converged.
-Any notable observations: 10 epochs insufficient for full convergence.
-                          Extending to 20+ epochs would likely improve
-                          val loss further.
+Convergence behavior: Val loss improved in 7/10 epochs. Model was still improving at epoch 10 — not fully converged.
+Any notable observations: 10 epochs insufficient for full convergence. Extending to 20+ epochs would likely improve val loss further.
