@@ -19,25 +19,21 @@ The goal is to reproduce baseline results, run controlled improvement experiment
 
 ```
 Classification-Transformer-Forecasting-LSTM/
-│
-├── classification_transformer/
-│   ├── baseline.ipynb              
-│   └── experiments.ipynb           
-│
-├── forecasting_lstm/
-│   └── baseline.ipynb              
-│
-├── results/
-│   ├── baseline/
-│   │   ├── transformer_metrics.txt
-│   │   └── lstm_metrics.txt
-│   └── experiments/
-│       ├── exp1_transformer_blocks/
-│       ├── exp2_attention_heads/
-│       └── exp3_dropout/
-│
+├── .gitignore
+├── LICENSE
+├── README.md
 ├── requirements.txt
-└── README.md
+├── classification_transformer/
+│   └── baseline.ipynb
+├── forecasting_lstm/
+│   ├── baseline.ipynb
+│   └── experiments.ipynb
+└── results/
+    ├── baseline/
+    │   ├── lstm_metrics.txt
+    │   └── transformer_metrics.txt
+    └── experiments/
+        └── lstm_experiments_results.md
 ```
 
 ---
