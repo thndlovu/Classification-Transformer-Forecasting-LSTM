@@ -7,7 +7,7 @@ Epochs: 150 (early stopping, patience=10)
 Batch size: 64
 
 --- Final Results ---
-Test Accuracy: 0.5159 (51.6% — majority class prediction)
+Test Accuracy: 0.5159 (51.6% - majority class prediction)
 Test Loss:     0.6930
 
 --- Training Notes ---
