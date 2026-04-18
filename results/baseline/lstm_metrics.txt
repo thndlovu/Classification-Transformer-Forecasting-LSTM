@@ -24,10 +24,9 @@ Epoch 8:  0.1217
 Epoch 9:  0.1212
 Epoch 10: 0.1196
 
---- Model Info ---
-LSTM units: 32
-Epoch duration: ~57-64s on Colab T4
-
 --- Training Notes ---
-Convergence behavior: Val loss improved in 7/10 epochs, slight overfitting signal in epochs 3-5 before recovering. Model was still improving at epoch 10 - not fully converged.
-Any notable observations: 10 epochs insufficient for full convergence. Extending to 20+ epochs would likely improve val loss further. Good baseline for comparison.
+Convergence behavior: Val loss improved in 7/10 epochs. Model was
+                      still improving at epoch 10 — not fully converged.
+Any notable observations: 10 epochs insufficient for full convergence.
+                          Extending to 20+ epochs would likely improve
+                          val loss further.
