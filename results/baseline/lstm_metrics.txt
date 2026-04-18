@@ -1,0 +1,33 @@
+LSTM Forecasting Baseline Metrics
+===================================
+Date run: 2026-04-17
+Colab runtime: GPU (T4)
+Epochs: 10
+Batch size: 256
+Sequence length: 720 hours lookback
+Forecast horizon: 72 hours ahead
+
+--- Final Results ---
+Val Loss (MSE): 0.1196 (epoch 10)
+Train Loss:     0.0994 (epoch 10)
+Best Val Loss:  0.1196 (epoch 10 — still improving)
+
+--- Per Epoch Val Loss ---
+Epoch 1:  0.1448
+Epoch 2:  0.1298
+Epoch 3:  0.1313
+Epoch 4:  0.1321
+Epoch 5:  0.1329
+Epoch 6:  0.1275
+Epoch 7:  0.1243
+Epoch 8:  0.1217
+Epoch 9:  0.1212
+Epoch 10: 0.1196
+
+--- Model Info ---
+LSTM units: 32
+Epoch duration: ~57-64s on Colab T4
+
+--- Training Notes ---
+Convergence behavior: Val loss improved in 7/10 epochs, slight overfitting signal in epochs 3-5 before recovering. Model was still improving at epoch 10 - not fully converged.
+Any notable observations: 10 epochs insufficient for full convergence. Extending to 20+ epochs would likely improve val loss further. Good baseline for comparison.
